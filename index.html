@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CDC Phone OTP Login</title>
+
+  <!-- SAP CDC Web SDK -->
+  <script src="https://cdns.gigya.com/js/gigya.js?apikey=4_DQQ_XPGE6CFrEEsXt1G-TQ"></script>
+
+  <style>
+    body { font-family: Arial; padding: 40px; }
+  </style>
+</head>
+<body>
+
+<h2>Login</h2>
+
+<!-- CDC ScreenSet -->
+<div id="cdc-container"></div>
+
+<script>
+  gigya.accounts.showScreenSet({
+    screenSet: "SAMACO-IdentifierFirst",
+    containerID: "gigya-identify-screen"
+  });
+
+  gigya.accounts.addEventHandlers({
+    onLogin: function () {
+      alert("Login successful");
+    },
+    onError: function (e) {
+      alert(e.errorMessage);
+    }
+  });
+</script>
+
+</body>
+</html>
